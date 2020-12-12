@@ -6,9 +6,9 @@ export default {
     return {};
   },
   methods: {
-    ajaxGet() {
+    ajaxGet(word_search) {
       var getRequest = axios.get(
-        "https://api.github.com/search/repositories?q=framework%2Blanguage%3Ajavascript&page=1&per_page=100&sort=stars&order=desc"
+        "https://api.github.com/search/repositories?q=topic:"+ word_search
       );
       return getRequest;
     }

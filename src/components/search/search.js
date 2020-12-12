@@ -1,20 +1,30 @@
 export default {
   data() {
     return {
-      search: ""
+      search_input: "",
+      word_search: "java",
+      resultsSearch: [],
+      loading:false,
     };
   },
   mounted() {
-    this.getList();
+   
   },
   methods: {
-    // get method to api
-    getList() {
-      this.getSearchApi()
-        .then(res => {
-          console.log("res", res);
+    // search
+    searchValue() {
+      var self = this;
+      this.loading=true;
+      // api request
+      this.getSearchApi(this.search_input)
+        .then((res) => {
+          self.resultsSearch = (res.data.items).splice(0,10);
+          self.loading=false;
         })
-        .catch(err => {});
-    }
-  }
+        .catch((err) => {
+          self.loading=false;
+        });
+    },
+  
+  },
 };
