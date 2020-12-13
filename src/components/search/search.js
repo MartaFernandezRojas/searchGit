@@ -4,27 +4,26 @@ export default {
       search_input: "",
       word_search: "java",
       resultsSearch: [],
-      loading:false,
+      loading: false,
     };
   },
-  mounted() {
-   
-  },
+  mounted() {},
   methods: {
     // search
     searchValue() {
       var self = this;
-      this.loading=true;
+      this.loading = true;
       // api request
       this.getSearchApi(this.search_input)
         .then((res) => {
-          self.resultsSearch = (res.data.items).splice(0,10);
-          self.loading=false;
+          self.resultsSearch = res.data.items.splice(0, 10);
+          //off spinner
+          self.loading = false;
         })
         .catch((err) => {
-          self.loading=false;
+          //off spinner
+          self.loading = false;
         });
     },
-  
   },
 };

@@ -8,6 +8,7 @@
             </el-col>
         </el-row>
         <el-row>
+        <!--serach bar-->
             <el-col class="bar_search" :span="12" :offset="6">
                 <el-input placeholder="Search Git repositories" prefix-icon="el-icon-search" v-model="search_input" @keyup.enter.native="searchValue()">
                 </el-input>
@@ -17,6 +18,7 @@
     <el-row>
         <el-col :span="22" :offset="1">
             <h3 class="subtitle">Results</h3>
+            <!--Result table-->
             <el-table class="table" :data="resultsSearch" v-loading="loading">
                 <el-table-column prop="name" label="Name" class="title">
                 </el-table-column>
