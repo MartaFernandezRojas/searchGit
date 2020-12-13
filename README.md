@@ -1,6 +1,7 @@
-# test_search
+# Marta Fernández Code. Vuejs - 2.5.11 / sass / Element ui / Mocha f.m.rojas@hotmail.com
 
-> A Vue.js project
+# command test
+npm run test
 
 ## Build Setup
 
